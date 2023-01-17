@@ -16,7 +16,7 @@ def test_main_1():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search('[\w,\W]*less than 50[\w,\W]*', lines[0])
+    res = re.search(r'[\w,\W]*less than 50[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
 
@@ -33,7 +33,7 @@ def test_main_2():
     lines = captureOut.getvalue().split('\n')
     print(lines)
 
-    res = re.search('[\w,\W]*greater than 100[\w,\W]*', lines[0])
+    res = re.search(r'[\w,\W]*greater than 100[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
 
@@ -51,6 +51,6 @@ def test_main_3():
     print(lines)
 
     res = re.search(
-        '[\w,\W]*greater than 50[\w,\W]*less than 100[\w,\W]*', lines[0])
+        r'[\w,\W]*greater than 50[\w,\W]*less than 100[\w,\W]*', lines[0])
     assert res != None
     print(res.group())
